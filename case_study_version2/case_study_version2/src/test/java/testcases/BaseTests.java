@@ -34,9 +34,8 @@ public class BaseTests {
 
 
     @BeforeSuite
-    public void setUpReport()
-    {
-        htmlReporter = new ExtentHtmlReporter(System.getProperty("user.dir") +"/test-output/xml/case_study_Report.html");
+    public void setUpReport() {
+        htmlReporter = new ExtentHtmlReporter(System.getProperty("user.dir") + "/test-output/xml/case_study_Report.html");
         extent = new ExtentReports();
 
         extent.attachReporter(htmlReporter);
@@ -50,9 +49,10 @@ public class BaseTests {
         htmlReporter.config().setTestViewChartLocation(ChartLocation.TOP);
         htmlReporter.config().setTheme(Theme.DARK);
     }
+
     @BeforeTest
     @Parameters("browserName")
-    public void startBrowser(String browserName){
+    public void startBrowser(String browserName) {
         driver = SelectBrowser.StartBrowser(browserName);
 
     }
@@ -69,19 +69,21 @@ public class BaseTests {
         homePage = new HomePage(driver);
 
     }
+
     @AfterMethod
     public void recordTestResult(ITestResult result) throws IOException {
-        if(result.getStatus() == ITestResult.FAILURE){
-            File file = ((TakesScreenshot)driver).getScreenshotAs(OutputType.FILE);
-            FileUtils.copyFile(file, new File("test-output/xml/" + result.getName()+".png"));
-            test.log(Status.FAIL,result.getThrowable());
+        if (result.getStatus() == ITestResult.FAILURE) {
+            File file = ((TakesScreenshot) driver).getScreenshotAs(OutputType.FILE);
+            FileUtils.copyFile(file, new File("test-output/xml/" + result.getName() + ".png"));
+            test.log(Status.FAIL, result.getThrowable());
             extent.flush();
+           // driver.close();
         }
     }
 
 
     @AfterClass
-    public void tearDown(){
+    public void tearDown() {
         driver.quit();
 
     }

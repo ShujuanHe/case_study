@@ -14,7 +14,7 @@ public class SelectBrowser {
         // ---If the browser is Firefox----
         if (browserName.equalsIgnoreCase("Firefox")) {
 
-            System.setProperty("webdriver.firefox.marionette", "C:\\Users\\shuju\\Automation Testing\\Case study_httpswww.alexandnova.com\\case_study_version2\\case_study_version2\\case_study_version2\\src\\test\\resources\\geckodriver.exe");
+           System.setProperty("webdriver.firefox.marionette", "C:\\Users\\shuju\\Automation Testing\\Case study_httpswww.alexandnova.com\\case_study_version2\\case_study_version2\\case_study_version2\\src\\test\\resources\\geckodriver.exe");
 
             driver = new FirefoxDriver();
         }

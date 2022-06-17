@@ -1,5 +1,6 @@
 package testcases;
 
+import com.aventstack.extentreports.Status;
 import org.apache.commons.io.FileUtils;
 import org.openqa.selenium.*;
 import org.testng.Assert;
@@ -27,15 +28,10 @@ public class RegisterPageTest extends BaseTests{
 
         Assert.assertEquals(actualURL,expectedURL);
 
-
-      /*  File file = ((TakesScreenshot)driver).getScreenshotAs(OutputType.FILE);
-        FileUtils.copyFile(file, new File("test-output/xml/RegisterPage.png"));*/
-
-
     }
     @Test(priority = 2)
     public void testSuccessfulRegister(){
-        //test = extent.createTest("Register_succeed_test", "Test Passed");
+
         //LoginPage actions
         LoginPage loginPage = homePage.clickAccountBtn();
         loginPage.moveToRegisterBtn();
@@ -46,6 +42,7 @@ public class RegisterPageTest extends BaseTests{
         registerPage.setLastNameField("pig");
         registerPage.setEmailField("heshujuan9988@gmail.com");
         registerPage.setPasswordField("12345");
+        test.log(Status.INFO, "Entered above info!");
         registerPage.clickRegister();
 
         String expectedURL = "https://www.alexandnova.com/account/register";
@@ -53,19 +50,12 @@ public class RegisterPageTest extends BaseTests{
 
         Assert.assertEquals(actualURL,expectedURL);
 
-       /* File file = ((TakesScreenshot)driver).getScreenshotAs(OutputType.FILE);
-        FileUtils.copyFile(file, new File("src/test/resources/screenshots/RegisterLoggedPage.png"));*/
-       // test.addScreenCaptureFromPath("RegisterLoggedPage.png");
-
-
-
-
     }
 
 
     @Test(priority = 3)
     public void testEmailValidation() throws IOException {
-        //test = extent.createTest("Register_succeed_test", "Test Passed");
+
         //LoginPage actions
         LoginPage loginPage = homePage.clickAccountBtn();
         loginPage.moveToRegisterBtn();
@@ -78,21 +68,19 @@ public class RegisterPageTest extends BaseTests{
         registerPage.setEmailField("heshujuan9988gmail.com");
         registerPage.setPasswordField("12345");
         registerPage.clickRegister();
+        test.log(Status.INFO, "Entered above info!");
 
         String expectedMessage = "Sorry! Please try that again.";
         String actualMessage = loginPage.getEmailErrorMessage(); //Because the error message shows in Login in page
 
         Assert.assertEquals(expectedMessage,actualMessage);
 
-       /* File file = ((TakesScreenshot)driver).getScreenshotAs(OutputType.FILE);
-        FileUtils.copyFile(file, new File("src/test/resources/screenshots/EmailValidation.png"));*/
-      //  test.addScreenCaptureFromPath("RegisterLoggedPage.png");
 
     }
 
     @Test(priority = 4)
     public void testEmailMandatory() throws IOException {
-        //test = extent.createTest("Register_succeed_test", "Test Passed");
+
         //LoginPage actions
         LoginPage loginPage = homePage.clickAccountBtn();
         loginPage.moveToRegisterBtn();
@@ -111,15 +99,11 @@ public class RegisterPageTest extends BaseTests{
 
         Assert.assertEquals(expectedMessage,actualMessage);
 
-       /* File file = ((TakesScreenshot)driver).getScreenshotAs(OutputType.FILE);
-        FileUtils.copyFile(file, new File("src/test/resources/screenshots/EmailValidation.png"));*/
-       // test.addScreenCaptureFromPath("RegisterLoggedPage.png");
-
     }
 
     @Test(priority = 5)
     public void testPassRules() throws IOException {
-        //test = extent.createTest("Register_succeed_test", "Test Passed");
+
         //LoginPage actions
         LoginPage loginPage = homePage.clickAccountBtn();
         loginPage.moveToRegisterBtn();
@@ -132,15 +116,12 @@ public class RegisterPageTest extends BaseTests{
         registerPage.setEmailField("heshujuan9988gmail.com");
         registerPage.setPasswordField("12");
         registerPage.clickRegister();
+        test.log(Status.INFO, "Entered above info!");
 
         String expectedMessage = "Sorry! Please try that again.";
         String actualMessage = loginPage.getEmailErrorMessage(); //Because the error message shows in Login in page
 
         Assert.assertEquals(expectedMessage,actualMessage);
-
-       /* File file = ((TakesScreenshot)driver).getScreenshotAs(OutputType.FILE);
-        FileUtils.copyFile(file, new File("src/test/resources/screenshots/EmailValidation.png"));*/
-        //test.addScreenCaptureFromPath("RegisterLoggedPage.png");
 
     }
 }

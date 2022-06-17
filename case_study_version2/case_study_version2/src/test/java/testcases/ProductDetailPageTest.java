@@ -17,7 +17,7 @@ public class ProductDetailPageTest extends BaseTests{
 
     @Test(priority = 1)
     public void testProductDetails() throws IOException {
-        //test = extent.createTest("login_succeed_test", "Test Passed");
+
         homePage = new HomePage(driver);
         productDetailPage = homePage.clickAnyProduct();
 
@@ -25,17 +25,11 @@ public class ProductDetailPageTest extends BaseTests{
         String actualText = productDetailPage.checkProductPrice();
         Assert.assertEquals(actualText,expectedText);
 
-
-
-       // assertTrue(customerLoggedInPage.getAlertText().contains("Welcome, Shujuan"), "Alert text is incorrect");
-       /* File file = ((TakesScreenshot)driver).getScreenshotAs(OutputType.FILE);
-        FileUtils.copyFile(file, new File("src/test/resources/screenshots/loginPage.png"));
-        test.addScreenCaptureFromPath("loginPage.png");*/
     }
 
     @Test(priority = 2)
     public void testAddToCart() throws IOException {
-        //test = extent.createTest("login_succeed_test", "Test Passed");
+
         homePage = new HomePage(driver);
         productDetailPage = homePage.clickAnyProduct();
 
