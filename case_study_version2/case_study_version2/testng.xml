@@ -3,11 +3,12 @@
 <suite name="suite">
 
     <test name="Testing Registration" enabled = "true">
-        <parameter name="browserName" value="Chrome"></parameter>
+        <parameter name="browserName" value="Firefox"></parameter>
         <classes>
             <class name="testcases.RegisterPageTest"/>
         </classes>
     </test>
+<!--
 
     <test name="Testing Login fuction" enabled = "true">
         <parameter name="browserName" value="Chrome"></parameter>
@@ -30,5 +31,5 @@
         </classes>
     </test>
 
-
+-->
 </suite>
