@@ -16,14 +16,19 @@ import static org.testng.Assert.assertTrue;
 
 public class LoginPageTests extends BaseTests{
     CustomerLoggedInPage customerLoggedInPage;
+    LoginPage loginPageActions;
 
     @Test(priority = 1)
-    public void testSuccessfulLogin() throws IOException {
+    public void testSuccessfulLogin() throws Exception {
 
-        LoginPage loginPage = homePage.clickAccountBtn();
-        loginPage.setEmailField("shujuanhe1@gmail.com");
-        loginPage.setPasswordField("691122");
-        CustomerLoggedInPage customerLoggedInPage = loginPage.clickLoginButton();
+        loginPageActions = homePage.clickAccountBtn();
+        test.log(Status.INFO, "Login Page is opened!");
+        loginPageActions.setEmailField("shujuanhe1@gmail.com");
+        loginPageActions.setPasswordField("691122");
+        test.log(Status.INFO, "Email and password is entered!");
+        CustomerLoggedInPage customerLoggedInPage = loginPageActions.clickLoginButton();
+        Thread.sleep(4000);
+
 
         customerLoggedInPage.clickCheckBox();
 
@@ -39,7 +44,7 @@ public class LoginPageTests extends BaseTests{
         test.log(Status.INFO, "Clicked on the login button");
         Thread.sleep(20000);
 
-        assertTrue(customerLoggedInPage.getErrorMessage()
+        assertTrue(loginPage.getEmailErrorMessage()
                         .contains("Sorry! Please try that again."),
                 "Alert text is incorrect");
 

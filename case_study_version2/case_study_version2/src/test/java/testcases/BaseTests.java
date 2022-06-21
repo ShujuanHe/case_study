@@ -54,11 +54,12 @@ public class BaseTests {
     @Parameters("browserName")
     public void startBrowser(String browserName) {
         driver = SelectBrowser.StartBrowser(browserName);
+        //test.log(Status.INFO, "Browser is started!");
 
     }
 
     @BeforeMethod
-    public void launchBrowser(Method method) throws IOException {
+    public void launchBrowser(Method method) throws Exception {
         String methodName = method.getName();
         test = extent.createTest(methodName);
         test.addScreenCaptureFromPath(methodName + ".png");
@@ -67,6 +68,8 @@ public class BaseTests {
         driver.manage().timeouts().implicitlyWait(Duration.ofSeconds(15));
         driver.get("https://www.alexandnova.com/");
         homePage = new HomePage(driver);
+        //test.log(Status.INFO, "Test is started and Home page is lunched!");
+
 
     }
 
@@ -76,8 +79,11 @@ public class BaseTests {
             File file = ((TakesScreenshot) driver).getScreenshotAs(OutputType.FILE);
             FileUtils.copyFile(file, new File("test-output/xml/" + result.getName() + ".png"));
             test.log(Status.FAIL, result.getThrowable());
+          //  extent.endTest(test);
             extent.flush();
            // driver.close();
+        }else{
+            test.log(Status.INFO, "Test ended!");
         }
     }
 

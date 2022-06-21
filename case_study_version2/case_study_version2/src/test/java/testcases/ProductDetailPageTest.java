@@ -15,6 +15,7 @@ public class ProductDetailPageTest extends BaseTests{
     HomePage homePage;
     ProductDetailPage productDetailPage;
 
+    //TC - 0010
     @Test(priority = 1)
     public void testProductDetails() throws IOException {
 
@@ -27,22 +28,8 @@ public class ProductDetailPageTest extends BaseTests{
 
     }
 
-    @Test(priority = 2)
-    public void testAddToCart() throws IOException {
 
-        homePage = new HomePage(driver);
-        productDetailPage = homePage.clickAnyProduct();
 
-        //ProductDetailPage actions
-        productDetailPage.setProductSize();
-        productDetailPage.setProductColor();
-        productDetailPage.setProductQty("2");
 
-        String expectedURL = "https://www.alexandnova.com/cart";
-        String actualURL = driver.getCurrentUrl();
-
-        Assert.assertEquals(actualURL,expectedURL);
-
-    }
 
 }

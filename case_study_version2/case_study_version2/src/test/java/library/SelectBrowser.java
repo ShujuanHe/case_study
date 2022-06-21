@@ -1,5 +1,6 @@
 package library;
 
+import io.github.bonigarcia.wdm.WebDriverManager;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.chrome.ChromeDriver;
 import org.openqa.selenium.edge.EdgeDriver;
@@ -14,8 +15,9 @@ public class SelectBrowser {
         // ---If the browser is Firefox----
         if (browserName.equalsIgnoreCase("Firefox")) {
 
-           System.setProperty("webdriver.firefox.marionette", "C:\\Users\\shuju\\Automation Testing\\Case study_httpswww.alexandnova.com\\case_study_version2\\case_study_version2\\case_study_version2\\src\\test\\resources\\geckodriver.exe");
-
+            System.setProperty("webdriver.firefox.marionette", "C:\\Users\\shuju\\Automation Testing\\Case study_httpswww.alexandnova.com\\case_study_version2\\case_study_version2\\case_study_version2\\src\\test\\resources\\geckodriver.exe");
+            //Firefox set up
+            WebDriverManager.firefoxdriver().setup();
             driver = new FirefoxDriver();
         }
         //---- If the browser is Chrome--
