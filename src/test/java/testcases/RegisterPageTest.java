@@ -61,19 +61,20 @@ public class RegisterPageTest extends BaseTests{
         registerPageActions = loginPageActions.clickRegisterBtn();
         registerPageActions.setFirstNameField("fink");
         registerPageActions.setLastNameField("john");
-        registerPageActions.setEmailField("testAtgmail8.com");
+        registerPageActions.setEmailField("testAt@gmail10.com");
         registerPageActions.setPasswordField("P@ssword4");
         test.log(Status.INFO, "Entered: First name, Last name, Email and Password!");
         registerPageActions.clickRegister();
         test.log(Status.INFO,"Register button clicked, Navigate to the  ");
 
         if(driver.getCurrentUrl() == "https://www.alexandnova.com/challenge"){
-            Thread.sleep(2000);
+            Thread.sleep(30000);
             registerPageActions.handleCaptcha();
         }
-        Thread.sleep(4000);
+        //Thread.sleep(4000);
 
         Assert.assertTrue(loginPageActions.getMyAccountText().equals("My account"));
+
 
      /*   String expectedURL = "https://www.alexandnova.com/account/register";
         String actualURL = driver.getCurrentUrl();
