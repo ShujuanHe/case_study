@@ -7,10 +7,8 @@
         <sourceTestOutputDir name="target/generated-test-sources/test-annotations" />
         <outputRelativeToContentRoot value="true" />
         <module name="SBAReview" />
+        <module name="case_study_version2" />
       </profile>
     </annotationProcessing>
-    <bytecodeTargetLevel>
-      <module name="SBAReview" target="1.8" />
-    </bytecodeTargetLevel>
   </component>
 </project>
