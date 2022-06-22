@@ -1,15 +1,40 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <testsuite name="Testing Registration"
            tests="5"
-           failures="1"
+           failures="2"
            errors="0"
            skipped="0"
-           time="175.535">
+           time="222.172">
     <properties></properties>
 
             <testcase
+                name="testSuccessfulRegister"
+                time="54.337"
+                classname="testcases.RegisterPageTest">
+
+            <failure type="org.openqa.selenium.WebDriverException" message="target frame detached
+  (Session info: chrome=102.0.5005.115)
+Build info: version: &apos;4.0.0&apos;, revision: &apos;3a21814679&apos;
+System info: host: &apos;DESKTOP-VU75KT1&apos;, ip: &apos;10.0.0.107&apos;, os.name: &apos;Windows 11&apos;, os.arch: &apos;amd64&apos;, os.version: &apos;10.0&apos;, java.version: &apos;11.0.15&apos;
+Driver info: org.openqa.selenium.chrome.ChromeDriver
+Command: [e12d8a3572ab02daf2bb5d75168905d9, findElement {using=xpath, value=//*[@id=&quot;shopify-section-header&quot;]/section/header/div[1]/div/div[2]/div[1]/a}]
+Capabilities {acceptInsecureCerts: false, browserName: chrome, browserVersion: 102.0.5005.115, chrome: {chromedriverVersion: 101.0.4951.41 (93c720db8323..., userDataDir: C:\Users\shuju\AppData\Loca...}, goog:chromeOptions: {debuggerAddress: localhost:51099}, javascriptEnabled: true, networkConnectionEnabled: false, pageLoadStrategy: normal, platform: WINDOWS, platformName: WINDOWS, proxy: Proxy(), se:cdp: ws://localhost:51099/devtoo..., se:cdpVersion: 102.0.5005.115, setWindowRect: true, strictFileInteractability: false, timeouts: {implicit: 0, pageLoad: 300000, script: 30000}, unhandledPromptBehavior: dismiss and notify, webauthn:extension:credBlob: true, webauthn:extension:largeBlob: true, webauthn:virtualAuthenticators: true}
+Session ID: e12d8a3572ab02daf2bb5d75168905d9">
+                <![CDATA[org.openqa.selenium.WebDriverException: target frame detached
+  (Session info: chrome=102.0.5005.115)
+Build info: version: '4.0.0', revision: '3a21814679'
+System info: host: 'DESKTOP-VU75KT1', ip: '10.0.0.107', os.name: 'Windows 11', os.arch: 'amd64', os.version: '10.0', java.version: '11.0.15'
+Driver info: org.openqa.selenium.chrome.ChromeDriver
+Command: [e12d8a3572ab02daf2bb5d75168905d9, findElement {using=xpath, value=//*[@id="shopify-section-header"]/section/header/div[1]/div/div[2]/div[1]/a}]
+Capabilities {acceptInsecureCerts: false, browserName: chrome, browserVersion: 102.0.5005.115, chrome: {chromedriverVersion: 101.0.4951.41 (93c720db8323..., userDataDir: C:\Users\shuju\AppData\Loca...}, goog:chromeOptions: {debuggerAddress: localhost:51099}, javascriptEnabled: true, networkConnectionEnabled: false, pageLoadStrategy: normal, platform: WINDOWS, platformName: WINDOWS, proxy: Proxy(), se:cdp: ws://localhost:51099/devtoo..., se:cdpVersion: 102.0.5005.115, setWindowRect: true, strictFileInteractability: false, timeouts: {implicit: 0, pageLoad: 300000, script: 30000}, unhandledPromptBehavior: dismiss and notify, webauthn:extension:credBlob: true, webauthn:extension:largeBlob: true, webauthn:virtualAuthenticators: true}
+Session ID: e12d8a3572ab02daf2bb5d75168905d9
+                java.base/jdk.internal.reflect.NativeConstructorAccessorImpl.newInstance0(Native Method)java.base/jdk.internal.reflect.NativeConstructorAccessorImpl.newInstance(NativeConstructorAccessorImpl.java:62)java.base/jdk.internal.reflect.DelegatingConstructorAccessorImpl.newInstance(DelegatingConstructorAccessorImpl.java:45)java.base/java.lang.reflect.Constructor.newInstance(Constructor.java:490)org.openqa.selenium.remote.codec.w3c.W3CHttpResponseCodec.createException(W3CHttpResponseCodec.java:200)org.openqa.selenium.remote.codec.w3c.W3CHttpResponseCodec.decode(W3CHttpResponseCodec.java:133)org.openqa.selenium.remote.codec.w3c.W3CHttpResponseCodec.decode(W3CHttpResponseCodec.java:53)org.openqa.selenium.remote.HttpCommandExecutor.execute(HttpCommandExecutor.java:184)org.openqa.selenium.remote.service.DriverCommandExecutor.invokeExecute(DriverCommandExecutor.java:164)org.openqa.selenium.remote.service.DriverCommandExecutor.execute(DriverCommandExecutor.java:139)org.openqa.selenium.remote.RemoteWebDriver.execute(RemoteWebDriver.java:559)org.openqa.selenium.remote.ElementLocation$ElementFinder$2.findElement(ElementLocation.java:162)org.openqa.selenium.remote.ElementLocation.findElement(ElementLocation.java:60)org.openqa.selenium.remote.RemoteWebDriver.findElement(RemoteWebDriver.java:383)org.openqa.selenium.remote.RemoteWebDriver.findElement(RemoteWebDriver.java:375)pages.RegisterPage.myAccountLinkIsDisplayed(RegisterPage.java:71)testcases.RegisterPageTest.testSuccessfulRegister(RegisterPageTest.java:87)java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke0(Native Method)java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62)java.base/jdk.internal.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)java.base/java.lang.reflect.Method.invoke(Method.java:566)org.testng.internal.MethodInvocationHelper.invokeMethod(MethodInvocationHelper.java:124)org.testng.internal.Invoker.invokeMethod(Invoker.java:583)org.testng.internal.Invoker.invokeTestMethod(Invoker.java:719)org.testng.internal.Invoker.invokeTestMethods(Invoker.java:989)org.testng.internal.TestMethodWorker.invokeTestMethods(TestMethodWorker.java:125)org.testng.internal.TestMethodWorker.run(TestMethodWorker.java:109)org.testng.TestRunner.privateRun(TestRunner.java:648)org.testng.TestRunner.run(TestRunner.java:505)org.testng.SuiteRunner.runTest(SuiteRunner.java:455)org.testng.SuiteRunner.runSequentially(SuiteRunner.java:450)org.testng.SuiteRunner.privateRun(SuiteRunner.java:415)org.testng.SuiteRunner.run(SuiteRunner.java:364)org.testng.SuiteRunnerWorker.runSuite(SuiteRunnerWorker.java:52)org.testng.SuiteRunnerWorker.run(SuiteRunnerWorker.java:84)org.testng.TestNG.runSuitesSequentially(TestNG.java:1208)org.testng.TestNG.runSuitesLocally(TestNG.java:1137)org.testng.TestNG.runSuites(TestNG.java:1049)org.testng.TestNG.run(TestNG.java:1017)com.intellij.rt.testng.IDEARemoteTestNG.run(IDEARemoteTestNG.java:66)com.intellij.rt.testng.RemoteTestNGStarter.main(RemoteTestNGStarter.java:109)
+]]>
+            </failure>
+    </testcase>
+            <testcase
                 name="testPassRules"
-                time="51.562"
+                time="54.044"
                 classname="testcases.RegisterPageTest">
 
             <failure type="java.lang.AssertionError" message="expected [passwd is invalid.] but found [Sorry! Please try that again.]">
@@ -21,23 +46,18 @@
 
 
             <testcase
-                name="testSuccessfulRegister"
-                time="37.321"
+                name="testEmailValidation"
+                time="54.001"
                 classname="testcases.RegisterPageTest">
             </testcase>
             <testcase
                 name="testEmailMandatory"
-                time="41.310"
+                time="53.897"
                 classname="testcases.RegisterPageTest">
             </testcase>
             <testcase
                 name="testNavigateToRegister"
-                time="12.154"
-                classname="testcases.RegisterPageTest">
-            </testcase>
-            <testcase
-                name="testEmailValidation"
-                time="33.188"
+                time="5.893"
                 classname="testcases.RegisterPageTest">
             </testcase>
 </testsuite>

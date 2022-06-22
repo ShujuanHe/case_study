@@ -4,12 +4,12 @@
            failures="1"
            errors="0"
            skipped="0"
-           time="1.668">
+           time="2.576">
     <properties></properties>
 
             <testcase
                 name="testProductDetails"
-                time="1.668"
+                time="2.576"
                 classname="testcases.ProductDetailPageTest">
 
             <failure type="java.lang.AssertionError" message="expected [$99.95 USD] but found []">

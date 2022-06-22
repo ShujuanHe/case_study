@@ -22,7 +22,7 @@ public class LoginPageTests extends BaseTests{
      * Test data-
      * Email: wrongemail@gmail.com
      * Password: wrongpass
-     * Expected result: User should login and User Dashboard Page is displayed
+     * Expected result: "Sorry! Please try that again."
      *
      * Test status: passed
      * @throws Exception

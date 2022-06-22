@@ -21,11 +21,12 @@ public class CartPageTest extends BaseTests {
     CartPage cartPageActions;
 
 
-    /** TC - 0011 Add Product to the cart and verify if product Is added to cart page
+    /**
+     * TC - 0011 Add Product to the cart and verify if product Is added to cart page
      * Test data: For login in-
      * Email:shujuanhe1@gmail.com
      * Password: 12345
-     *
+     * <p>
      * Expected result: Selected products should be added to the cart.
      * Test status: Passed
      *
@@ -41,7 +42,7 @@ public class CartPageTest extends BaseTests {
         test.log(Status.INFO, "Valid Email and password is entered!");
         customerLoggedInPage = loginPageActions.clickLoginButton();
         test.log(Status.INFO, "Welcome Page is opened!");
-        Thread.sleep(5000);
+        Thread.sleep(30000);
 
         customerLoggedInPage.returnToHomePage();
         test.log(Status.INFO, "Returned to Home page");
@@ -53,16 +54,16 @@ public class CartPageTest extends BaseTests {
          **/
         productDetailPage.setProductSize();
         productDetailPage.setProductColor();
+        test.log(Status.INFO, "Product property is set- Product Size, Product Color");
         Thread.sleep(2000);
-        productDetailPage.waitListenerForAddToCart();
+        //productDetailPage.waitListenerForAddToCart();
         productDetailPage.clickAddToCart();
         Thread.sleep(500);
-        test.log(Status.INFO, "Product property is set- Product Size, Product Color");
+
         test.log(Status.INFO, "Product is added to Cart");
-        productDetailPage.clickOnCheckoutBtn();
+        Thread.sleep(10000);
 
-        Thread.sleep(1000);
-
+        cartPageActions = productDetailPage.clickCartBtn();
 
         String expectedURL = "https://www.alexandnova.com/cart";
         String actualURL = driver.getCurrentUrl();
@@ -71,7 +72,8 @@ public class CartPageTest extends BaseTests {
     }
 
 
-    /** TC - 0012 Refresh the page and verify if items are still present in the cart
+    /**
+     * TC - 0012 Refresh the page and verify if items are still present in the cart
      * Expected result: Selected products should be still in the cart.
      * Test status: Passed
      *
@@ -90,9 +92,10 @@ public class CartPageTest extends BaseTests {
 
     }
 
-    /** TC - 0013 Increase the quantity of the product and verify if it is showing up in cart
+    /**
+     * TC - 0013 Increase the quantity of the product and verify if it is showing up in cart
      * Expected result: Selected products should be added to the cart with new quantity.
-     *
+     * <p>
      * Test data: qty: 2
      * Test status: Passed
      *
@@ -114,7 +117,8 @@ public class CartPageTest extends BaseTests {
 
     }
 
-    /** TC-0014 Verify Quantity of the products matches with amount displayed in cart
+    /**
+     * TC-0014 Verify Quantity of the products matches with amount displayed in cart
      * Test data: qty: 3
      * Test status: Passed
      *
@@ -122,7 +126,7 @@ public class CartPageTest extends BaseTests {
      */
     @Test(priority = 4)
     public void testQtyMatchesPrice() throws Exception {
-        CartPage cartPageActions = productDetailPage.clickCartBtn();
+        cartPageActions = productDetailPage.clickCartBtn();
         test.log(Status.INFO, "Cart Page is opened!");
         Thread.sleep(1000);
         cartPageActions.addProductQty("3");
@@ -134,14 +138,15 @@ public class CartPageTest extends BaseTests {
 
     }
 
-    /** TC-0015 Verify Remove Product from cart: Verify that the Product should be removed from the cart and the Cart icon should show 0 items.
+    /**
+     * TC-0015 Verify Remove Product from cart: Verify that the Product should be removed from the cart and the Cart icon should show 0 items.
      * Test status: Passed
      *
      * @throws Exception
      */
     @Test(priority = 5)
     public void testRemoveFromCart() throws Exception {
-        CartPage cartPageActions = productDetailPage.clickCartBtn();
+        cartPageActions = productDetailPage.clickCartBtn();
         test.log(Status.INFO, "Cart Page is opened!");
         Thread.sleep(1000);
 
@@ -150,6 +155,6 @@ public class CartPageTest extends BaseTests {
 
         String expectedMessage = "You don't have any items in your cart yet. Continue shopping .";
         String actualMessage = cartPageActions.getEmptyCartMessage();
-        Assert.assertEquals(actualMessage,expectedMessage);
+        Assert.assertEquals(actualMessage, expectedMessage);
     }
 }

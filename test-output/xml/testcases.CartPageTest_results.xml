@@ -1,43 +1,37 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <testsuite name="Testing Cart details function"
            tests="5"
-           failures="1"
+           failures="0"
            errors="0"
            skipped="0"
-           time="40.155">
+           time="80.883">
     <properties></properties>
 
-            <testcase
-                name="testAddToCart"
-                time="19.587"
-                classname="testcases.CartPageTest">
-
-            <failure type="java.lang.AssertionError" message="expected [https://www.alexandnova.com/cart] but found [https://www.alexandnova.com/10856759353/checkouts/78cba0edb422a617faecc685267b0377?_ga=2.219040281.1206508464.1655870698-1480112053.1655870698]">
-                <![CDATA[java.lang.AssertionError: expected [https://www.alexandnova.com/cart] but found [https://www.alexandnova.com/10856759353/checkouts/78cba0edb422a617faecc685267b0377?_ga=2.219040281.1206508464.1655870698-1480112053.1655870698]
-                org.testng.Assert.fail(Assert.java:96)org.testng.Assert.failNotEquals(Assert.java:776)org.testng.Assert.assertEqualsImpl(Assert.java:137)org.testng.Assert.assertEquals(Assert.java:118)org.testng.Assert.assertEquals(Assert.java:453)org.testng.Assert.assertEquals(Assert.java:463)testcases.CartPageTest.testAddToCart(CartPageTest.java:69)java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke0(Native Method)java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62)java.base/jdk.internal.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)java.base/java.lang.reflect.Method.invoke(Method.java:566)org.testng.internal.MethodInvocationHelper.invokeMethod(MethodInvocationHelper.java:124)org.testng.internal.Invoker.invokeMethod(Invoker.java:583)org.testng.internal.Invoker.invokeTestMethod(Invoker.java:719)org.testng.internal.Invoker.invokeTestMethods(Invoker.java:989)org.testng.internal.TestMethodWorker.invokeTestMethods(TestMethodWorker.java:125)org.testng.internal.TestMethodWorker.run(TestMethodWorker.java:109)org.testng.TestRunner.privateRun(TestRunner.java:648)org.testng.TestRunner.run(TestRunner.java:505)org.testng.SuiteRunner.runTest(SuiteRunner.java:455)org.testng.SuiteRunner.runSequentially(SuiteRunner.java:450)org.testng.SuiteRunner.privateRun(SuiteRunner.java:415)org.testng.SuiteRunner.run(SuiteRunner.java:364)org.testng.SuiteRunnerWorker.runSuite(SuiteRunnerWorker.java:52)org.testng.SuiteRunnerWorker.run(SuiteRunnerWorker.java:84)org.testng.TestNG.runSuitesSequentially(TestNG.java:1208)org.testng.TestNG.runSuitesLocally(TestNG.java:1137)org.testng.TestNG.runSuites(TestNG.java:1049)org.testng.TestNG.run(TestNG.java:1017)com.intellij.rt.testng.IDEARemoteTestNG.run(IDEARemoteTestNG.java:66)com.intellij.rt.testng.RemoteTestNGStarter.main(RemoteTestNGStarter.java:109)
-]]>
-            </failure>
-    </testcase>
 
 
             <testcase
-                name="testRemoveFromCart"
-                time="6.794"
+                name="testRefreshCart"
+                time="2.828"
                 classname="testcases.CartPageTest">
             </testcase>
             <testcase
                 name="testAddQty"
-                time="5.822"
+                time="6.621"
                 classname="testcases.CartPageTest">
             </testcase>
             <testcase
                 name="testQtyMatchesPrice"
-                time="5.873"
+                time="6.735"
                 classname="testcases.CartPageTest">
             </testcase>
             <testcase
-                name="testRefreshCart"
-                time="2.079"
+                name="testRemoveFromCart"
+                time="7.827"
+                classname="testcases.CartPageTest">
+            </testcase>
+            <testcase
+                name="testAddToCart"
+                time="56.872"
                 classname="testcases.CartPageTest">
             </testcase>
 </testsuite>
