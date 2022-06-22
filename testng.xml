@@ -2,6 +2,7 @@
 <!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd">
 <suite name="suite">
 
+<!--
     <test name="Testing Registration" enabled="true">
         <parameter name="browserName" value="Chrome"></parameter>
         <classes>
@@ -20,7 +21,7 @@
     <test name="Testing products search function" enabled="true">
         <parameter name="browserName" value="Chrome"></parameter>
         <classes>
-            <class name="testcases.SearchPageTest"/>
+            <class name="testcases.SearchResultPageTest"/>
         </classes>
 
     </test>
@@ -40,6 +41,14 @@
         </classes>
     </test>
 
+    <test name="Testing Check out function" enabled="true">
+        <parameter name="browserName" value="Chrome"></parameter>
+        <classes>
+            <class name="testcases.CheckOutPageTest"/>
+        </classes>
+    </test>
+
+-->
     <test name="Testing Check out function" enabled="true">
         <parameter name="browserName" value="Chrome"></parameter>
         <classes>

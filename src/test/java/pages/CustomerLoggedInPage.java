@@ -11,6 +11,7 @@ public class CustomerLoggedInPage {
     private By checkBox = By.id("recaptcha-anchor");
     private By editorIframeId = By.xpath("/html/body/div[3]/div/form/div/div/div/iframe");
     private By homepageLink = By.id("navigation-home");
+    private By welcomeMassage = By.xpath("//*[@id=\"keyboard-nav-3\"]/h1");
   //  private By errorMessage = By.xpath("/html/body/div[3]/div[2]/div[1]/form/p");
 
     public CustomerLoggedInPage(WebDriver driver){
@@ -32,6 +33,11 @@ public class CustomerLoggedInPage {
 
     public void switchToMainArea(){
         driver.switchTo().parentFrame();
+    }
+
+    public String getWelcomeMessage(){
+        return driver.findElement(welcomeMassage).getText();
+
     }
 
     public HomePage returnToHomePage(){

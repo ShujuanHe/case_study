@@ -27,10 +27,11 @@ public class ProductDetailPage {
     //Find BY FULL PATH
    By addToCartBtn = By.xpath("/html/body/div[3]/div[1]/section/div/div[3]/div/form/div[4]/input");
     By homepageLink = By.id("navigation-home");
-    /*By cartButton = By.xpath("/html/body/div[2]/section/header/div[1]/div/div[2]/div[2]/a");*/
+    By cartButton = By.xpath("//*[@id=\"shopify-section-header\"]/section/header/div[1]/div/div[2]/div[2]/a");
    // By inputList = By.xpath("//input[@type='radio']");
     By inputList = By.xpath("//*[@tabindex=0]");
-    By checkoutBtn = By.xpath("//*[@id=\"shopify-section-header\"]/section/header/div[1]/div/div[2]/a");
+    //By checkoutBtn = By.xpath("//*[@id=\"shopify-section-header\"]/section/header/div[1]/div/div[2]/a");
+    By checkoutBtn = By.xpath("/html/body/div[3]/div/section/form/div/div/div[2]/button");
     public ProductDetailPage(WebDriver driver) {
         this.driver = driver;
     }
@@ -94,11 +95,14 @@ public class ProductDetailPage {
         driver.findElement(addToCartBtn).click();
 
     }
+    /** Another way to click on Checkout button on the menu bar to navigate to Checkout page
+     *
     public CartPage clickOnCartBtn(){
         driver.findElement(By.xpath("//*[@id=\"shopify-section-header\"]/section/header/div[1]/div/div[2]/div[2]/a/span[1]")).click();
         return new CartPage(driver);
 
     }
+     **/
 
     public HomePage returnToHomePage(){
         driver.findElement(homepageLink).click();
@@ -123,17 +127,19 @@ public class ProductDetailPage {
 
         this.waitListener(addToCartBtn);
     }
-   /* public CartPage clickCartBtn(){
-        this.moveToBtns(cartButton);
+   public CartPage clickCartBtn(){
+       // this.moveToBtns(cartButton);
         driver.findElement(cartButton).click();
 
         return new CartPage(driver);
     }
-*/
+
+
 
     public CheckOutPage clickOnCheckoutBtn(){
         driver.findElement(checkoutBtn).click();
         return new CheckOutPage(driver);
     }
+
 
 }

@@ -4,19 +4,19 @@
            failures="0"
            errors="0"
            skipped="0"
-           time="1.562">
+           time="2.311">
     <properties></properties>
 
 
 
             <testcase
                 name="testSuccessfulSearchBlank"
-                time="0.539"
-                classname="testcases.SearchPageTest">
+                time="0.776"
+                classname="testcases.SearchResultPageTest">
             </testcase>
             <testcase
                 name="testSuccessfulSearch"
-                time="1.023"
-                classname="testcases.SearchPageTest">
+                time="1.535"
+                classname="testcases.SearchResultPageTest">
             </testcase>
 </testsuite>

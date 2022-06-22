@@ -39,13 +39,14 @@ public class BaseTests {
         extent = new ExtentReports();
 
         extent.attachReporter(htmlReporter);
-        extent.setSystemInfo("Host Name", "shujuan.home-server.local");
+        //DESKTOP-VU75KT1
+        extent.setSystemInfo("Host Name", "DESKTOP-VU75KT1");
         extent.setSystemInfo("Environment", "QA");
         extent.setSystemInfo("User Name", "Shujuan He");
 
         htmlReporter.config().setChartVisibilityOnOpen(true);
-        htmlReporter.config().setDocumentTitle("Google search test");
-        htmlReporter.config().setReportName("Google Search report");
+        htmlReporter.config().setDocumentTitle("Capstone Project test");
+        htmlReporter.config().setReportName("Capstone Project report");
         htmlReporter.config().setTestViewChartLocation(ChartLocation.TOP);
         htmlReporter.config().setTheme(Theme.DARK);
     }
@@ -54,7 +55,6 @@ public class BaseTests {
     @Parameters("browserName")
     public void startBrowser(String browserName) {
         driver = SelectBrowser.StartBrowser(browserName);
-        //test.log(Status.INFO, "Browser is started!");
 
     }
 
@@ -68,7 +68,7 @@ public class BaseTests {
         driver.manage().timeouts().implicitlyWait(Duration.ofSeconds(15));
         driver.get("https://www.alexandnova.com/");
         homePage = new HomePage(driver);
-        //test.log(Status.INFO, "Test is started and Home page is lunched!");
+        test.log(Status.INFO, "Test is started and Home page is lunched!");
 
 
     }
@@ -79,10 +79,10 @@ public class BaseTests {
             File file = ((TakesScreenshot) driver).getScreenshotAs(OutputType.FILE);
             FileUtils.copyFile(file, new File("test-output/xml/" + result.getName() + ".png"));
             test.log(Status.FAIL, result.getThrowable());
-          //  extent.endTest(test);
+            //  extent.endTest(test);
             extent.flush();
-           // driver.close();
-        }else{
+            // driver.close();
+        } else {
             test.log(Status.INFO, "Test ended!");
         }
     }
@@ -90,6 +90,7 @@ public class BaseTests {
 
     @AfterClass
     public void tearDown() {
+        extent.flush();
         driver.quit();
 
     }

@@ -2,6 +2,8 @@ package pages;
 
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
+import org.openqa.selenium.WebElement;
+import org.openqa.selenium.support.FindBy;
 
 public class RegisterPage {
     private WebDriver driver;
@@ -13,6 +15,14 @@ public class RegisterPage {
     private By captchaContent = By.xpath("/html/body/div[2]");
     private By checkBox = By.xpath("//*[@id=\"recaptcha-anchor\"]");
     private By captchaSubmit = By.xpath("//*[@id=\"keyboard-nav-3\"]/div/form/input[2]");
+    private By myAccount = By.xpath("//*[@id=\"shopify-section-header\"]/section/header/div[1]/div/div[2]/div[1]/a");
+
+    /**
+     * Here is for page factory
+     *
+     * @FindBy(linkText = "My account")
+     * WebElement myAccountLink;
+     */
 
 
     public RegisterPage(WebDriver driver) {
@@ -37,7 +47,7 @@ public class RegisterPage {
 
     }
 
-    public void handleCaptcha(){
+    public void handleCaptcha() {
         driver.switchTo().frame(driver.findElement(captchaContent));
         driver.findElement(checkBox).click();
         driver.findElement(captchaSubmit).click();
@@ -55,5 +65,18 @@ public class RegisterPage {
         driver.findElement(registerBtn).click();
         return new CustomerLoggedInPage(driver);
     }
+
+    public boolean myAccountLinkIsDisplayed() {
+
+        return driver.findElement(myAccount).isDisplayed();
+
+    }
+
+    /** Here is for Page factory example
+     *  public boolean myAccountLinkIsDisplayed() {
+
+     return myAccountLink.isDisplayed();
+
+     }*/
 
 }

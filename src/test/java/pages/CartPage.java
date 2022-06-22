@@ -13,6 +13,7 @@ public class CartPage {
     By productQty = By.xpath("//*[@id=\"updates_30882853224501\"]");
     By removeProduct = By.xpath("//*[@id=\"shopify-section-cart\"]/section/form/table/tbody/tr/td[1]/a[2]");
     By emptyCart = By.xpath("/html/body/div[3]/div/section/p");
+    By checkoutBtn = By.xpath("//*[@id=\"shopify-section-cart\"]/section/form/div/div/div[2]/button");
 
 
     public CartPage(WebDriver driver) {
@@ -35,6 +36,10 @@ public class CartPage {
     public String getEmptyCartMessage(){
         return driver.findElement(emptyCart).getText();
 
+    }
+    public CheckOutPage navigateToCheckoutPage(){
+        driver.findElement(checkoutBtn).click();
+        return new CheckOutPage(driver);
     }
 
 
