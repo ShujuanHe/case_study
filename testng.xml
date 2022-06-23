@@ -1,6 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd">
 <suite name="Registration Page Tests">
+
     <test name="Testing Registration" enabled="true">
         <parameter name="browserName" value="Chrome"></parameter>
         <classes>
@@ -37,4 +38,6 @@
             <class name="testcases.CheckOutPageTest"/>
         </classes>
     </test>
+
+
 </suite>

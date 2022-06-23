@@ -4,29 +4,29 @@
            failures="0"
            errors="0"
            skipped="0"
-           time="121.027">
+           time="110.729">
     <properties></properties>
 
 
 
             <testcase
-                name="testDicountCanApply"
-                time="60.296"
+                name="CheckCheckoutSuccessfully"
+                time="24.087"
                 classname="testcases.CheckOutPageTest">
             </testcase>
             <testcase
                 name="testPaymentMode"
-                time="17.503"
-                classname="testcases.CheckOutPageTest">
-            </testcase>
-            <testcase
-                name="CheckCheckoutSuccessfully"
-                time="17.839"
+                time="16.457"
                 classname="testcases.CheckOutPageTest">
             </testcase>
             <testcase
                 name="CheckMandatoryValidation"
-                time="25.389"
+                time="23.024"
+                classname="testcases.CheckOutPageTest">
+            </testcase>
+            <testcase
+                name="testDicountCanApply"
+                time="47.161"
                 classname="testcases.CheckOutPageTest">
             </testcase>
 </testsuite>
